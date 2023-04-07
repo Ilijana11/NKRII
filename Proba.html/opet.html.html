@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Naslov stranice</title>
+	<style>
+		.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+			border: 2px solid yellow;
+			padding: 20px;
+		}
+		img {
+			max-width: 100%;
+			height: auto;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container" id="prvi-dio">
+		<h2>Molimo Vas upišite Vaše ime:</h2>
+		<form onsubmit="prikaziDrugiDio(); return false;">
+			<input type="text" id="ime-input" placeholder="Upišite Vaše ime" required>
+			<br><br>
+			<input type="submit" value="Potvrdi">
+		</form>
+	</div>
+	<div class="container" id="drugi-dio" style="display:none;">
+		<h2 id="ime-prikaz"></h2>
+		<img src="C:\Users\Ilijana\Desktop\604015359f7d4.jpg">
+		<h3>Hvala na pažnji!</h3>
+	</div>
+
+	<script>
+		function prikaziDrugiDio() {
+			var ime = document.getElementById("ime-input").value;
+			document.getElementById("prvi-dio").style.display = "none";
+			document.getElementById("drugi-dio").style.display = "flex";
+			document.getElementById("ime-prikaz").innerHTML = "Draga/i " + ime;
+		}
+	</script>
+</body>
+</html>
